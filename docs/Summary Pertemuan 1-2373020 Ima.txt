@@ -1,0 +1,11 @@
+Minta mahasiswa menulis exit ticket:
+1. Lapisan mana yang paling saya pahami?
+Lapisan data dan keputusan manusia. Data itu paling gampang dipahami karena konsepnya jelas, ini soal fakta-fakta mentah yang dicatat, sumber paling awal sebelum diolah jadi apa pun. Sementara keputusan manusia itu paling masuk akal buat saya karena ini bagian yang paling "manusiawi"
+
+2. Lapisan mana yang masih saya campuradukkan?
+BI dan ML masih sering ketuker buat saya. Keduanya sama-sama "mengolah" data, jadi rasanya mirip, padahal BI itu sifatnya mendeskripsikan apa yang sudah terjadi (misal: dashboard, agregat), sedangkan ML mempelajari pola buat memprediksi sesuatu yang belum terjadi. Saya masih perlu latihan buat langsung bisa bedain mana output yang cuma laporan dan mana yang prediksi.
+
+3. Bukti apa yang membuat sebuah sistem layak disebut “cerdas” dan bertanggung jawab?
+Bukan soal terdengar meyakinkan, tapi mungkin soal bisa ditelusuri, ada jejak yang jelas dari data mentah sampai keputusan akhir. Contohnya dari materi: rekomendasi yang disertai profil pelanggan, riwayat transaksi, dan skor model itu lebih layak dipercaya dibanding jawaban chatbot yang lancar tapi tanpa sumber. Sistem yang bertanggung jawab itu yang bisa dijelaskan alasannya, bukan cuma "kelihatan" pintar.
+
+Tutup dengan pengantar: minggu depan mahasiswa tidak langsung memilih algoritma; mereka belajar mengubah dataset menjadi masalah yang sah dan terukur.
