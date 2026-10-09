@@ -55,7 +55,9 @@ def train_and_evaluate():
             (
                 "classifier",
                 RandomForestClassifier(
-                    n_estimators=300,
+                    n_estimators=80,
+                    min_samples_leaf=5,
+                    max_depth=12,
                     class_weight="balanced",
                     random_state=42,
                     n_jobs=-1,
@@ -75,7 +77,7 @@ def train_and_evaluate():
     importance_df = pd.DataFrame({"feature": feature_names, "importance": importances})
     importance_df = importance_df.sort_values("importance", ascending=False)
     importance_df.to_csv(BASE_DIR / "feature_importance.csv", index=False)
-    joblib.dump(model, BASE_DIR / "student_outcome_pipeline.pkl")
+    joblib.dump(model, BASE_DIR / "student_outcome_pipeline.pkl", compress=3)
 
     metrics = {
         "accuracy": float(accuracy_score(y_test, predictions)),

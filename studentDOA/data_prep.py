@@ -36,7 +36,7 @@ CATEGORICAL_COLUMNS = [
 
 
 def prepare_data():
-    df = pd.read_csv(SOURCE_FILE)
+    df = pd.read_csv(SOURCE_FILE, sep=";", encoding="utf-8-sig")
     df.columns = df.columns.str.strip()
 
     if TARGET not in df.columns:
