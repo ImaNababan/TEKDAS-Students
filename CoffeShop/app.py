@@ -37,7 +37,7 @@ def load_data():
         data["day_name_id"] = data["transaction_date"].dt.dayofweek.map(names)
     return data
 
-
+"""ini adalah file utama untuk menjalankan dashboard analisis penjualan Coffee Shop. Pastikan file data tersedia di folder yang sesuai."""
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');

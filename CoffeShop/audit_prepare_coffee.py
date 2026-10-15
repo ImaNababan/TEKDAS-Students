@@ -3,6 +3,7 @@ Tidak mengubah Excel sumber dan tidak menghapus transaksi secara otomatis.
 Jalankan: python audit_prepare_coffee.py
 Opsional: python audit_prepare_coffee.py --input "lokasi/file.xlsx"
 """
+"""2373020 Ima Maryati"""
 from pathlib import Path
 import argparse
 import json
@@ -15,7 +16,7 @@ COLUMNS = ['transaction_id', 'transaction_date', 'transaction_time',
 TEXT = ['store_location', 'product_category', 'product_type', 'product_detail']
 NUMERIC = ['transaction_id', 'transaction_qty', 'store_id', 'product_id', 'unit_price']
 
-
+"""Fungsi utama untuk menjalankan audit dan persiapan data."""
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input', type=Path, default=DEFAULT_FOLDER / 'Coffee Shop Sales.xlsx')

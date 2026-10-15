@@ -1,3 +1,4 @@
+"""2373020 Ima M`aryati"""
 import pandas as pd
 
 # Ganti nama file sesuai file Excel kamu
