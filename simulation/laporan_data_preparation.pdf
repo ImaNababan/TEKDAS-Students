@@ -1,0 +1,81 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 4083 >>
+stream
+BT
+/F2 20 Tf 1 0 0 1 48 790 Tm (LAPORAN DATA PREPARATION) Tj
+/F1 11 Tf 1 0 0 1 48 760 Tm (Ringkasan pembahasan dan kondisi dataset) Tj
+/F1 10 Tf 1 0 0 1 48 735 Tm (Laporan ini merangkum fungsi simulation/data_prep.py, penyesuaian pembacaan file sumber, dan) Tj
+/F1 10 Tf 1 0 0 1 48 721 Tm (isi tiga file hasil persiapan data yang diperiksa.) Tj
+/F2 13 Tf 1 0 0 1 48 702 Tm (1. Tujuan data preparation) Tj
+/F1 10 Tf 1 0 0 1 48 682 Tm (Skrip memuat data pelanggan, pesanan, ringkasan produk, dan pendapatan bulanan. Setelah) Tj
+/F1 10 Tf 1 0 0 1 48 668 Tm (memeriksa kolom wajib, skrip membentuk fitur pelanggan, membagi dataset secara stratified) Tj
+/F1 10 Tf 1 0 0 1 48 654 Tm (menjadi data latih dan data uji, lalu menyimpan CSV serta laporan kualitas data.) Tj
+/F2 13 Tf 1 0 0 1 48 635 Tm (2. Penyesuaian pada skrip) Tj
+/F1 10 Tf 1 0 0 1 48 615 Tm (customers.csv menggunakan pemisah titik koma, sementara file sumber lain menggunakan koma.) Tj
+/F1 10 Tf 1 0 0 1 48 601 Tm (Pembacaan CSV disesuaikan agar pandas mendeteksi pemisah. Parsing registration_date juga) Tj
+/F1 10 Tf 1 0 0 1 48 587 Tm (disetel untuk format hari/bulan/tahun \(dd/mm/yyyy\).) Tj
+/F1 10 Tf 1 0 0 1 48 573 Tm (Ketiga file hasil yang diperiksa sudah ada sebelum penyesuaian ini. Pemeriksaan eksekusi) Tj
+/F1 10 Tf 1 0 0 1 48 559 Tm (ulang belum selesai karena lingkungan Python tidak memiliki paket scikit-learn \(sklearn\),) Tj
+/F1 10 Tf 1 0 0 1 48 545 Tm (yang dibutuhkan saat mengimpor skrip.) Tj
+/F2 13 Tf 1 0 0 1 48 526 Tm (3. Struktur dataset hasil) Tj
+/F2 10 Tf 1 0 0 1 48 506 Tm (customer_ml_dataset.csv  |  8.000 baris x 23 kolom) Tj
+/F2 10 Tf 1 0 0 1 48 491 Tm (customer_train.csv      |  6.400 baris x 23 kolom) Tj
+/F2 10 Tf 1 0 0 1 48 476 Tm (customer_test.csv       |  1.600 baris x 23 kolom) Tj
+/F1 10 Tf 1 0 0 1 48 461 Tm (Data latih dan uji berjumlah 80% dan 20% dari dataset lengkap. Pembagian menggunakan) Tj
+/F1 10 Tf 1 0 0 1 48 447 Tm (stratifikasi berdasarkan churned agar proporsi kelas target terjaga.) Tj
+/F2 13 Tf 1 0 0 1 48 428 Tm (4. Kolom-kolom) Tj
+/F1 10 Tf 1 0 0 1 48 408 Tm (ID: customer_id. Kategori \(7\): country, gender, membership_tier, preferred_category,) Tj
+/F1 10 Tf 1 0 0 1 48 394 Tm (preferred_device, preferred_payment_method, acquisition_channel.) Tj
+/F1 10 Tf 1 0 0 1 48 380 Tm (Numerik asli \(10\): age, total_orders, total_spend_usd, avg_order_value_usd,) Tj
+/F1 10 Tf 1 0 0 1 48 366 Tm (days_since_last_purchase, reviews_given, avg_review_score, returns_made, wishlist_items,) Tj
+/F1 10 Tf 1 0 0 1 48 352 Tm (newsletter_subscribed.) Tj
+/F1 10 Tf 1 0 0 1 48 338 Tm (Fitur turunan \(4\): customer_tenure_days, orders_per_year, reviews_per_order,) Tj
+/F1 10 Tf 1 0 0 1 48 324 Tm (returns_per_order. Target: churned \(0 atau 1\).) Tj
+/F2 13 Tf 1 0 0 1 48 305 Tm (5. Distribusi target saat file diperiksa) Tj
+/F1 10 Tf 1 0 0 1 48 285 Tm (Dataset lengkap: churn 0 = 7.285; churn 1 = 715) Tj
+/F1 10 Tf 1 0 0 1 48 270 Tm (Data latih: churn 0 = 5.828; churn 1 = 572) Tj
+/F1 10 Tf 1 0 0 1 48 255 Tm (Data uji: churn 0 = 1.457; churn 1 = 143) Tj
+/F1 10 Tf 1 0 0 1 48 240 Tm (Contoh baris pertama dataset lengkap: customer_id C00001, United States, Male, Free, usia) Tj
+/F1 10 Tf 1 0 0 1 48 226 Tm (40, 4 pesanan, masa pelanggan 2.631 hari, churned 0.) Tj
+/F2 13 Tf 1 0 0 1 48 207 Tm (6. Cara menjalankan ulang) Tj
+/F1 10 Tf 1 0 0 1 48 187 Tm (Dari folder simulation, pasang dependensi dengan pip install -r requirements.txt, kemudian) Tj
+/F1 10 Tf 1 0 0 1 48 173 Tm (jalankan python data_prep.py. Skrip akan membuat ulang customer_ml_dataset.csv,) Tj
+/F1 10 Tf 1 0 0 1 48 159 Tm (customer_train.csv, customer_test.csv, dan data_quality_report.json.) Tj
+/F1 9 Tf 1 0 0 1 48 145 Tm (Catatan: customers2.csv dan orders2.csv juga ada di folder, tetapi skrip saat ini membaca) Tj
+/F1 9 Tf 1 0 0 1 48 131 Tm (customers.csv dan orders.csv. Nilai pada file hasil yang dirangkum di atas adalah kondisi) Tj
+/F1 9 Tf 1 0 0 1 48 117 Tm (saat diperiksa; jalankan ulang setelah dependensi tersedia untuk memperbarui hasil dari) Tj
+/F1 9 Tf 1 0 0 1 48 103 Tm (sumber yang sekarang.) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000004455 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4591
+%%EOF

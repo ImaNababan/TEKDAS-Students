@@ -55,10 +55,15 @@ FEATURE_COLUMNS = CATEGORICAL_COLUMNS + NUMERIC_COLUMNS
 
 def load_source_data(base_dir: Path = BASE_DIR):
     """Load the four CSVs supplied with the Kaggle-style dataset."""
-    customers = pd.read_csv(base_dir / "customers.csv")
-    orders = pd.read_csv(base_dir / "orders.csv")
-    products = pd.read_csv(base_dir / "product_summary.csv")
-    monthly = pd.read_csv(base_dir / "monthly_revenue.csv")
+    # The supplied customer export uses semicolons while the other source files
+    # use commas. Let pandas detect the delimiter for each file.
+    def read_csv(filename):
+        return pd.read_csv(base_dir / filename, sep=None, engine="python")
+
+    customers = read_csv("customers.csv")
+    orders = read_csv("orders.csv")
+    products = read_csv("product_summary.csv")
+    monthly = read_csv("monthly_revenue.csv")
     return customers, orders, products, monthly
 
 
@@ -89,7 +94,9 @@ def prepare_customer_features(customers: pd.DataFrame, snapshot_date=None) -> pd
     the sklearn Pipeline in ml_model.py, which prevents train/test leakage.
     """
     df = customers.copy()
-    df["registration_date"] = pd.to_datetime(df["registration_date"], errors="coerce")
+    df["registration_date"] = pd.to_datetime(
+        df["registration_date"], errors="coerce", dayfirst=True
+    )
 
     if snapshot_date is None:
         snapshot_date = df["registration_date"].max()
@@ -143,7 +150,9 @@ def main():
     validate_sources(customers, orders, products, monthly)
 
     orders["order_date"] = pd.to_datetime(orders["order_date"], errors="coerce")
-    customers["registration_date"] = pd.to_datetime(customers["registration_date"], errors="coerce")
+    customers["registration_date"] = pd.to_datetime(
+        customers["registration_date"], errors="coerce", dayfirst=True
+    )
 
     # Use the latest date visible anywhere in the source as the dataset snapshot.
     snapshot_date = max(orders["order_date"].max(), customers["registration_date"].max())
